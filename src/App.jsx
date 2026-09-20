@@ -45,6 +45,10 @@ const router = createBrowserRouter([
     path:"waffle",
     element:<Waffle />
   },
+  {
+    path:"watches",
+    element:<Watches />
+  },
 
 ])
 
