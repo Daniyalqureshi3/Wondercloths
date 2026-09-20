@@ -4,7 +4,11 @@ import Layout from './layout/Layout'
 import Cart from './pages/Cart'
 import Favorite from './pages/Favorite'
 import All from './pages/All'
-
+import Pants from './pages/Pants'
+import Trouser from './pages/Trouser'
+import Tshirt from './pages/Tshirt'
+import Waffle from './pages/Waffle'
+import Watches from './pages/Watches'
 function App() {
 const router = createBrowserRouter([
   {
@@ -15,10 +19,6 @@ const router = createBrowserRouter([
         path: "All",
         element: <All />
       },
-      // {
-      //   path:"pants",
-      //   element:< />
-      // }
     ]
   },
   {
@@ -29,6 +29,23 @@ const router = createBrowserRouter([
     path:"favorite",
     element:<Favorite/>
   },
+  {
+    path:"paints",
+    element:<Pants />
+  },
+  {
+    path:"trouser",
+    element:<Trouser />
+  },
+  {
+    path:"tshirt",
+    element:<Tshirt />
+  },
+  {
+    path:"waffle",
+    element:<Waffle />
+  },
+
 ])
 
   return (
