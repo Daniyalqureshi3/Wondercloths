@@ -32,7 +32,10 @@ const All = () => {
         </div>
         <h1 className="text-center mt-3 font-medium text-4xl font-serif shadow-2xl text-gray-400 hover:text-black">Trending Now</h1> 
           {/* show some items  */}
-          <div className="">
+          {/*  */}
+          {/*  */}
+          {/* map the items */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 shadow-md">
         {products.shirts.map((card)=>(
           <div key={card.id} className="">
             <div className="">
@@ -41,7 +44,7 @@ const All = () => {
             <h1>{card.name}</h1>
             <div className="flex gap-2">
   {card.sizes.map((size, index) => (
-    <span key={index}>{size}</span>
+    <span key={index}>  {size}</span>
   ))}
 </div>
             <div className="flex gap-2">
