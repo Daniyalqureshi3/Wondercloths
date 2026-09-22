@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     element:<Favorite/>
   },
   {
-    path:"paints",
+    path:"pants",
     element:<Pants />
   },
   {
@@ -55,6 +55,7 @@ const router = createBrowserRouter([
   return (
     <>
      <RouterProvider router={router} />
+     
     </>
   )
 }

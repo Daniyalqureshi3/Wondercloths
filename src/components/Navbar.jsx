@@ -10,7 +10,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white">
+    <header className="w-full border-b border-gray-200 bg-white  ">
       <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
         <div className="w-24">
@@ -163,7 +163,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/pants"
+              to="/Pants"
               onClick={closeSidebar}
               className="block rounded-lg px-3 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900"
             >
