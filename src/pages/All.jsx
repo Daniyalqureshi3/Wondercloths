@@ -1,4 +1,5 @@
-
+import React from "react"
+import products from "../data/products"
 
 const All = () => {
   return (
@@ -31,7 +32,31 @@ const All = () => {
         </div>
         <h1 className="text-center mt-3 font-medium text-4xl font-serif shadow-2xl text-gray-400 hover:text-black">Trending Now</h1> 
           {/* show some items  */}
-        <div className=""></div>  
+          <div className="">
+        {products.shirts.map((card)=>(
+          <div key={card.id} className="">
+            <div className="">
+              <img src={card.image} alt="" />
+            </div>
+            <h1>{card.name}</h1>
+            <div className="flex gap-2">
+  {card.sizes.map((size, index) => (
+    <span key={index}>{size}</span>
+  ))}
+</div>
+            <div className="flex gap-2">
+  {card.colors.map((color, index) => (
+    <span
+      key={index}
+      className="h-5 w-5 rounded-full border"
+      style={{ backgroundColor: color }}
+    ></span>
+  ))}
+</div>
+          </div>
+        ))} 
+
+          </div>
          {/* show last hadinf */}
          <div className=""></div>
          
