@@ -9,6 +9,7 @@ import Trouser from './pages/Trouser'
 import Tshirt from './pages/Tshirt'
 import Waffle from './pages/Waffle'
 import Watches from './pages/Watches'
+import Shirts from './pages/Shirts'
 function App() {
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
     path:"watches",
     element:<Watches />
   },
+  {
+    path:'shirts',
+    element:<Shirts />
+  }
 
 ])
 

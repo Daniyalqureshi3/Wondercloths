@@ -1,5 +1,6 @@
 import React from "react";
 import products from "../data/products";
+import {Link} from'react-router-dom'
 
 const All = () => {
   return (
@@ -55,24 +56,39 @@ const All = () => {
       {/* map the items */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.shirts.slice(0, 4).map((card) => (
-          <div key={card.id} className=" m-1 border border-gray-300 p-4 hover:shadow-xl">
-            <div className="overflow-hidden  ">
-              <img src={card.image} alt="" />
+          <div
+            key={card.id}
+            className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+          >
+            <div className="overflow-hidden">
+              <img
+                src={card.image}
+                alt={card.name}
+                className="w-full aspect-3/4 object-cover transition-transform duration-500 hover:scale-105"
+              />
             </div>
             {/*  */}
-            <h1 className="text-2xl">{card.name}</h1>
+            <h1 className="mt-3 font-medium text-base">{card.name}</h1>
+            <p className="mt-1 text-lg font-bold">
+              Rs. {card.price.toLocaleString()}
+            </p>
             <div className="flex gap-2">
               {card.sizes.map((size, index) => (
-                <span key={index}
-                className="font-bold text-"> {size}</span>
+                <span
+                  key={index}
+                  className="mt-3 flex flex-wrap gap-2 text-sm text-gray-600"
+                >
+                  {" "}
+                  {size}
+                </span>
               ))}
             </div>
             {/*  */}
-            <div className="flex gap-2 ">
+            <div className="flex gap-2 mt-2 ">
               {card.colors.map((color, index) => (
                 <span
                   key={index}
-                  className="h-5 w-5 rounded-full border mb-2"
+                  className="h-5 w-5 rounded-full border border-gray-300"
                   style={{ backgroundColor: color }}
                 ></span>
               ))}
@@ -80,6 +96,15 @@ const All = () => {
           </div>
         ))}
       </div>
+      <div className="flex items-center gap-4 my-10">
+  <div className="flex-1 border-t border-gray-300"></div>
+
+  <button  className="text-sm font-semibold uppercase tracking-wider hover:text-gray-500">
+    <Link to="/shirts">See More</Link>
+  </button>
+
+  <div className="flex-1 border-t border-gray-300"></div>
+</div>
       {/* show last hadinf */}
       <div className=""></div>
     </div>
