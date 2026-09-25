@@ -52,7 +52,7 @@ const products = {
 {
   id: 5,
   name: "shirts",
-  image: "	https://focusclothing.pk/cdn/shop/files/0002_1f435…44fc-a90c-67acc89e94f3.jpg?v=1788503665&width=352",
+  image: "https://focusclothing.pk/cdn/shop/files/0002_1f435…44fc-a90c-67acc89e94f3.jpg?v=1788503665&width=352",
   price: 2300,
   description: "Elevate your formal wardrobe with this sophisticated purple dress shirt. Crafted for a polished, professional look, it pairs effortlessly with suits, blazers, or tailored trousers. The rich purple tone adds personality while maintaining versatility for office settings, events, and special occasions. Premium fabric ensures comfort and durability through repeated wear and washing. Perfect for anyone seeking quality menswear that combines style with everyday practicality.",
   rating: 4.5,
