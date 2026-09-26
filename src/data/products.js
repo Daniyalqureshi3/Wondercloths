@@ -3,7 +3,7 @@ const products = {
     {
   id: 1,
   name: "Classic Oxford Shirt",
-  image: "https://focusclothing.pk/cdn/shop/files/68a.jpg?crop=center&height=680&v=1752322134&width=476",
+  image: "https://focusclothing.pk/cdn/shop/files/Deepmarron.jpg?v=1772867231&width=352",
   price: 3499,
   description: "Look sharp and stylish with our Black Dress Shirt! Made from high-quality materials, this shirt is perfect for any formal or semi-formal occasion. Keep it classic with a black tie, or add a pop of color with a bold pocket square. Upgrade your wardrobe with this versatile and timeless piece.",
   rating: 4.5,
@@ -41,7 +41,7 @@ const products = {
 {
   id: 4,
   name: "shirts",
-  image: "	https://focusclothing.pk/cdn/shop/files/Navy_3.jpg?v=1763013762&width=352",
+  image: "https://essentia.com.pk/cdn/shop/files/26FS018-4_1000x.jpg?v=1785833755",
   price: 1800,
   description: "Elevate your formal wardrobe with this sophisticated burgundy dress shirt. Crafted for the modern professional, it combines timeless elegance with contemporary styling. The rich burgundy hue works seamlessly with charcoal, navy, or black suits, making it an essential piece for business meetings, formal events, and upscale occasions. Premium fabric ensures comfort throughout the day while maintaining a polished appearance. Perfect for layering under blazers or wearing standalone for refined casual settings.",
   rating: 4.5,
@@ -52,7 +52,7 @@ const products = {
 {
   id: 5,
   name: "shirts",
-  image: "https://focusclothing.pk/cdn/shop/files/0002_1f435…44fc-a90c-67acc89e94f3.jpg?v=1788503665&width=352",
+  image: "	https://essentia.com.pk/cdn/shop/files/DSC_8974_1000x.jpg?v=1780471542",
   price: 2300,
   description: "Elevate your formal wardrobe with this sophisticated purple dress shirt. Crafted for a polished, professional look, it pairs effortlessly with suits, blazers, or tailored trousers. The rich purple tone adds personality while maintaining versatility for office settings, events, and special occasions. Premium fabric ensures comfort and durability through repeated wear and washing. Perfect for anyone seeking quality menswear that combines style with everyday practicality.",
   rating: 4.5,
@@ -74,7 +74,7 @@ const products = {
 {
   id: 7,
   name: "shirts",
-  image: "https://focusclothing.pk/cdn/shop/files/Grey_95501…jpg?crop=center&height=234&v=1776692816&width=164",
+  image: "	https://essentia.com.pk/cdn/shop/files/DSC_8058_1000x.jpg?v=1778567681",
   price: 3200,
   description: "Elevate your workday wardrobe with this soft pastel green dress shirt, crafted from a premium cotton blend for breathable comfort and lasting durability. The subtle sage tone pairs effortlessly with charcoal, navy, or neutral trousers, making it a versatile essential for professional settings and smart-casual occasions. Smooth fabric drapes cleanly for a polished silhouette. Perfect for those seeking sophisticated color beyond traditional whites and blues.",
   rating: 4.5,
@@ -107,7 +107,7 @@ const products = {
 {
   id: 10,
   name: "shirts",
-  image: "	https://focusclothing.pk/cdn/shop/files/105_239ffa…jpg?crop=center&height=234&v=1779519471&width=164",
+  image: "https://zellbury.com/cdn/shop/files/MFSCH2504_1.jpg?v=1766730466",
   price: 1400,
   description: "Elevate your formal wardrobe with this sophisticated green dress shirt, crafted from a premium cotton blend that delivers both comfort and durability. The breathable fabric ensures all-day wear without compromising on style, making it an essential piece for professional settings and special occasions alike. Its clean lines and refined cut offer versatility—pair it with tailored trousers for the office or layer it under a blazer for evening events. The cotton blend resists wrinkles while maintaining a crisp, polished appearance. A timeless investment in quality menswear that complements any wardrobe.",
   rating: 4.5,
@@ -118,7 +118,7 @@ const products = {
 {
   id: 11,
   name: "shirts",
-  image: "	https://focusclothing.pk/cdn/shop/files/001_cbf9de…jpg?crop=center&height=234&v=1788502861&width=164",
+  image: "https://png.pngtree.com/thumb_back/fh260/background/20221122/pngtree-shirt-mens-shirt-on-a-background-formal-shirts-object-photo-image_15336588.jpg",
   price: 2700,
   description: "This pocketless white dress shirt combines understated elegance with everyday practicality. Crafted from premium cotton, it features sleek black buttons and a clean, minimalist silhouette that works seamlessly across formal events, office wear, and smart-casual occasions. The breathable fabric delivers all-day comfort without compromising on that crisp, polished finish. A versatile staple for the modern wardrobe.",
   rating: 4.5,
@@ -129,7 +129,7 @@ const products = {
 {
   id: 12,
   name: "shirts",
-  image: "https://focusclothing.pk/cdn/shop/files/0001_88c7a…jpg?crop=center&height=234&v=1788184825&width=164",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvmJ3q98ysInjY5C2bPOVWAccOmyRl_wsvuvr5K9hUxA&s=10",
   price: 2500,
   description: "Elevate your workwear essentials with this sophisticated Light Gray Dress Shirt, crafted from a premium cotton blend for all-day comfort and durability. The versatile light gray hue pairs effortlessly with suits, trousers, and casual separates, making it a wardrobe staple for professional and social occasions alike. The breathable fabric allows for natural airflow, keeping you cool and confident throughout the day. Designed with a refined fit and clean lines, this shirt delivers polished styling that transitions seamlessly from office to evening. Perfect for building a curated collection of timeless menswear basics.",
   rating: 4.5,
