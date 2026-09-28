@@ -54,18 +54,21 @@ const All = () => {
       {/*  */}
       {/*  */}
       {/* map the items */}
+  
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.shirts.slice(0, 4).map((card) => (
+          <Link   key={card.id}
+  to={`/detail/shirts/${card.id}`}>
+  
           <div
-            key={card.id}
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-          >
+            >
             <div className="overflow-hidden">
               <img
                 src={card.image}
                 alt={card.name}
                 className="w-full aspect-3/4 object-cover transition-transform duration-500 hover:scale-105"
-              />
+                />
             </div>
             {/*  */}
             <h1 className="mt-3 font-medium text-base">{card.name}</h1>
@@ -75,8 +78,8 @@ const All = () => {
             <div className="flex gap-2">
               {card.sizes.map((size, index) => (
                 <span
-                  key={index}
-                  className="mt-3 flex flex-wrap gap-2 text-sm text-gray-600"
+                key={index}
+                className="mt-3 flex flex-wrap gap-2 text-sm text-gray-600"
                 >
                   {" "}
                   {size}
@@ -94,6 +97,7 @@ const All = () => {
               ))}
             </div>
           </div>
+          </Link>
         ))}
       </div>
       <div className="flex items-center gap-4 my-10">

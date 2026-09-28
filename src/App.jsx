@@ -10,6 +10,7 @@ import Tshirt from './pages/Tshirt'
 import Waffle from './pages/Waffle'
 import Watches from './pages/Watches'
 import Shirts from './pages/Shirts'
+import ProductDetail from './pages/ProductDetail'
 function App() {
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path:'shirts',
     element:<Shirts />
+  },
+  {
+    path:'detail/:category/:id',
+    element:<ProductDetail />
   }
 
 ])
