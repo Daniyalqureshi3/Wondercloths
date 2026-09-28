@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import products from '../data/products'
+import { Link, Links } from 'react-router-dom'
 
 const Pants = () => {
   return (
@@ -8,6 +9,8 @@ const Pants = () => {
       <Navbar />
        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.pants.map((card) => (
+          <Link key={card.id} to={``}>
+
           <div
             key={card.id}
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
@@ -39,13 +42,14 @@ const Pants = () => {
             <div className="flex gap-2 mt-2 ">
               {card.colors.map((color, index) => (
                 <span
-                  key={index}
-                  className="h-5 w-5 rounded-full border border-gray-300"
-                  style={{ backgroundColor: color }}
+                key={index}
+                className="h-5 w-5 rounded-full border border-gray-300"
+                style={{ backgroundColor: color }}
                 ></span>
               ))}
             </div>
           </div>
+              </Link>
         ))}
       </div>
       < Footer/>
