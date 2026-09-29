@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import products from '../data/products'
-import { Link, Links } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Pants = () => {
   return (
@@ -9,7 +9,7 @@ const Pants = () => {
       <Navbar />
        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.pants.map((card) => (
-          <Link key={card.id} to={``}>
+          <Link key={card.id} to={`/detail/pants/${card.id}`}>
 
           <div
             key={card.id}
