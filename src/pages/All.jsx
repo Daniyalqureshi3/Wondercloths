@@ -57,9 +57,7 @@ const All = () => {
   
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.shirts.slice(0, 4).map((card) => (
-          <Link   key={card.id}
-  to={`/detail/shirts/${card.id}`}>
-  
+          <Link   key={card.id} to={`/detail/shirts/${card.id}`}>
           <div
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >

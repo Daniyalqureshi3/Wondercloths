@@ -1,6 +1,8 @@
 import products from '../data/products'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
+
 
 const Shirts = () => {
   return (
@@ -9,8 +11,8 @@ const Shirts = () => {
       {/* product map */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.shirts.map((card) => (
+          <Link key={card.id} to={`/detail/shirts/${card.id}`}>
           <div
-            key={card.id}
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
           >
             <div className="overflow-hidden">
@@ -47,6 +49,7 @@ const Shirts = () => {
               ))}
             </div>
           </div>
+          </Link>
         ))}
       </div>
 
