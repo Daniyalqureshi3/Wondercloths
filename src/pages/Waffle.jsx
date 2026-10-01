@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import products from '../data/products'
+import { Link } from 'react-router-dom'
 
 const Waffle = () => {
   return (
@@ -10,10 +11,12 @@ const Waffle = () => {
       {/* products */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.waffleShirts.map((card) => (
+          <Link   key={card.id} to={`/detail/waffleShirts/${card.id}`}>
+
           <div
             key={card.id}
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-          >
+            >
             <div className="overflow-hidden">
               <img
                 src={card.image}
@@ -29,9 +32,9 @@ const Waffle = () => {
             <div className="flex gap-2">
               {card.sizes.map((size, index) => (
                 <span
-                  key={index}
+                key={index}
                   className="mt-3 flex flex-wrap gap-2 text-sm text-gray-600"
-                >
+                  >
                   {" "}
                   {size}
                 </span>
@@ -41,13 +44,14 @@ const Waffle = () => {
             <div className="flex gap-2 mt-2 ">
               {card.colors.map((color, index) => (
                 <span
-                  key={index}
+                key={index}
                   className="h-5 w-5 rounded-full border border-gray-300"
                   style={{ backgroundColor: color }}
                 ></span>
               ))}
             </div>
           </div>
+        </Link>
         ))}
       </div>
       <Footer />

@@ -89,6 +89,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
+        {product.sizes &&(
       <div className="border-t border-gray-200 pt-6">
         <div className="mb-4 flex items-center justify-between">
           <h2 className="font-semibold text-gray-900">
@@ -99,24 +100,24 @@ const ProductDetail = () => {
             {selectedSize || 'Choose your size'}
           </span>
         </div>
-
-        <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
           {product.sizes.map((size, index) => (
             <button
-              key={index}
-              type="button"
-              onClick={() => setSelectedSize(size)}
-              className={`min-w-14 rounded-lg border px-5 py-3 text-sm font-medium transition ${
-                selectedSize === size
-                  ? 'border-gray-900 bg-gray-900 text-white'
-                  : 'border-gray-300 text-gray-700 hover:border-gray-900'
+            key={index}
+            type="button"
+            onClick={() => setSelectedSize(size)}
+            className={`min-w-14 rounded-lg border px-5 py-3 text-sm font-medium transition ${
+              selectedSize === size
+              ? 'border-gray-900 bg-gray-900 text-white'
+              : 'border-gray-300 text-gray-700 hover:border-gray-900'
               }`}
-            >
+              >
               {size}
             </button>
           ))}
         </div>
       </div>
+        )}
 
       <div className="flex items-center justify-between rounded-xl bg-gray-50 p-4">
         <span className="font-medium text-gray-700">
@@ -142,11 +143,11 @@ const ProductDetail = () => {
 
       <button
         type="button"
-        disabled={
-          !selectedSize ||
-          !selectedColor ||
-          product.stock <= 0
-        }
+       disabled={
+  (product.sizes && !selectedSize) ||
+  !selectedColor ||
+  product.stock <= 0
+}
         className="w-full rounded-xl bg-gray-900 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300"
       >
         Add to Cart
