@@ -1,8 +1,10 @@
 import React from "react";
 import products from "../data/products";
 import {Link} from'react-router-dom'
+import { cartuse } from "../context/cartcontext";
 
 const All = () => {
+  const {dispatch} = cartuse()
   return (
     <div>
       <div className=" max-w-full mt-3 items-center flex justify-center gap-2 sm:gap-4">
