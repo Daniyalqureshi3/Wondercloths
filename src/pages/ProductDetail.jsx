@@ -4,15 +4,35 @@ import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useState } from 'react'
+import { cartuse } from '../context/cartcontext'
+import { FaOpencart } from "react-icons/fa";
 
 
 const ProductDetail = () => {
+const {dispatch} = cartuse()
+
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedColor, setSelectedColor] = useState('')
     const {category, id} = useParams()
     const product = products[category].find(
   (item) => item.id === Number(id)
 )
+  const Addtocart =()=>{
+    dispatch({
+      type:"ADD_CART",
+      payload:{
+        image: product.image,
+        category: product.category,
+        price:product.price,
+        name:product.name,
+        color:selectedColor,
+        size:selectedSize,
+      }
+    })
+  }
+
+
+
   return (
     <div>
         <Navbar />
@@ -142,6 +162,7 @@ const ProductDetail = () => {
       </div>
 
       <button
+      onClick={Addtocart}
         type="button"
        disabled={
   (product.sizes && !selectedSize) ||
@@ -150,6 +171,7 @@ const ProductDetail = () => {
 }
         className="w-full rounded-xl bg-gray-900 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300"
       >
+        <span><FaOpencart /></span>
         Add to Cart
       </button>
 

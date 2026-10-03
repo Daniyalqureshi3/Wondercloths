@@ -11,6 +11,8 @@ import Waffle from './pages/Waffle'
 import Watches from './pages/Watches'
 import Shirts from './pages/Shirts'
 import ProductDetail from './pages/ProductDetail'
+import { CartProvider } from './context/cartcontext'
+
 function App() {
 const router = createBrowserRouter([
   {
@@ -64,7 +66,9 @@ const router = createBrowserRouter([
 
   return (
     <>
+    <CartProvider>
      <RouterProvider router={router} />
+    </CartProvider>
      
     </>
   )

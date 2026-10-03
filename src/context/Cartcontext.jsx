@@ -58,7 +58,7 @@ const reducer =(state, action) =>{
  };
 }
 
-export const cartprovider =({children})=>{
+export const CartProvider =({children})=>{
 const [state, dispatch] = useReducer(reducer, initailstate)
 useEffect(()=>{
     localStorage.setItem("cart", JSON.stringify(state.cart))
