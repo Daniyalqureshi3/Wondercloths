@@ -2,9 +2,22 @@ import products from '../data/products'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
+import { cartuse } from '../context/cartcontext'
 
 
 const Shirts = () => {
+  const {dispatch} = cartuse()
+    const favorite =()=>{
+    dispatch({
+      type:"ADD_FAVORITE",
+      payload:{
+                image: products.image,
+        category: products.category,
+        price:products.price,
+        name:products.name,
+      }
+    })
+  }
   return (
     <div>
       <Navbar />

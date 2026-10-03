@@ -10,8 +10,8 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white  ">
-      <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="w-full border-b border-gray-200 bg-white ">
+      <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ">
 
         <div className="w-24">
           <button

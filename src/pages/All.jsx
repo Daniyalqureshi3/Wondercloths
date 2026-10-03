@@ -1,8 +1,24 @@
 import React from "react";
 import products from "../data/products";
 import {Link} from'react-router-dom'
+import { cartuse } from "../context/cartcontext";
+import { MdFavoriteBorder } from "react-icons/md";
+import Favorite from "./Favorite";
 
 const All = () => {
+  const {dispatch} = cartuse()
+
+  const favorite =(card)=>{
+    dispatch({
+      type:"ADD_FAVORITE",
+      payload:{
+        image: card.image,
+        category: card.category,
+        price: card.price,
+        name: card.name,
+      }
+    })
+  }
   return (
     <div>
       <div className=" max-w-full mt-3 items-center flex justify-center gap-2 sm:gap-4">
@@ -17,7 +33,7 @@ const All = () => {
           <h1 className="text-center font-medium text-black/90">T-shirt</h1>
         </div>
         <div className=" bg-white/95  flex flex-col">
-          <div className="rounded-full h-17 w-17 sm:h-28 sm:w-28 md:h-38 md:w-38 overflow-hidden ">
+          <div className="relative rounded-full h-17 w-17 sm:h-28 sm:w-28 md:h-38 md:w-38 overflow-hidden ">
             <img
               src="https://focusclothing.pk/cdn/shop/files/104_b91ddd4f-7cf8-45bc-93f7-992c873294b9.jpg?v=1779518339&width=2000"
               alt="t-shirt"
@@ -62,6 +78,8 @@ const All = () => {
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
             <div className="overflow-hidden">
+              
+      
               <img
                 src={card.image}
                 alt={card.name}

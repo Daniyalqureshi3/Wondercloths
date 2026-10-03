@@ -21,7 +21,7 @@ const {dispatch} = cartuse()
     dispatch({
       type:"ADD_CART",
       payload:{
-        image: product.image,
+        image: image,
         category: product.category,
         price:product.price,
         name:product.name,
