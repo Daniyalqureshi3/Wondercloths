@@ -4,9 +4,11 @@ import {Link} from'react-router-dom'
 import { cartuse } from "../context/cartcontext";
 import { MdFavoriteBorder } from "react-icons/md";
 import Favorite from "./Favorite";
+import { MdFavorite } from "react-icons/md";
 
 const All = () => {
   const {dispatch} = cartuse()
+  const [Favorite, setFavorite] = useState(false)
 
   const favorite =(card)=>{
     dispatch({
@@ -70,9 +72,12 @@ const All = () => {
       {/*  */}
       {/*  */}
       {/* map the items */}
-  
+
+
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
+        
         {products.shirts.slice(0, 4).map((card) => (
+          
           <Link   key={card.id} to={`/detail/shirts/${card.id}`}>
           <div
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
@@ -126,7 +131,9 @@ const All = () => {
   <div className="flex-1 border-t border-gray-300"></div>
 </div>
       {/* show last hadinf */}
-      <div className=""></div>
+      <div className="">
+
+      </div>
     </div>
   );
 };
