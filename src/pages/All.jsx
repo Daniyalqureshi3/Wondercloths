@@ -1,28 +1,30 @@
-import React from "react";
 import products from "../data/products";
 import {Link} from'react-router-dom'
 import { cartuse } from "../context/cartcontext";
 import { MdFavoriteBorder } from "react-icons/md";
-import Favorite from "./Favorite";
 import { MdFavorite } from "react-icons/md";
+import { useState } from "react";
 
 const All = () => {
-  const {dispatch} = cartuse()
-  const [Favorite, setFavorite] = useState(false)
+  const {dispatch, state} = cartuse()
 
-  const favorite =(card)=>{
-    dispatch({
-      type:"ADD_FAVORITE",
-      payload:{
-        image: card.image,
-        category: card.category,
-        price: card.price,
-        name: card.name,
-      }
-    })
-  }
+
+
+const favorite = (card) => {
+  dispatch({
+    type: "ADD_FAVORITE",
+payload: {
+  productId: card.id,
+  image: card.image,
+  category: "shirts",
+  price: card.price,
+  name: card.name,
+}
+  })
+}
   return (
     <div>
+      {/*  */}
       <div className=" max-w-full mt-3 items-center flex justify-center gap-2 sm:gap-4">
         <div className=" bg-white/95  flex flex-col  ">
           <div className="rounded-full  h-17 w-17 sm:h-28 sm:w-28 md:h-38 md:w-38 overflow-hidden ">
@@ -72,55 +74,76 @@ const All = () => {
       {/*  */}
       {/*  */}
       {/* map the items */}
+  
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3">
+  {products.shirts.slice(0, 4).map((card) => {
+    const isFavorite = state.favorite.some(
+      (item) =>
+        item.productId === card.id &&
+        item.category === "shirts"
+    )
 
+    return (
+      <div
+        key={card.id}
+        className="relative m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+      >
+        <div className="absolute top-3 right-3 z-10">
+          <button
+            type="button"
+            onClick={() => favorite(card)}
+            className="text-2xl transition-transform duration-200 hover:scale-110"
+          >
+            {isFavorite ? (
+              <MdFavorite className="text-red-500" />
+            ) : (
+              <MdFavoriteBorder className="text-gray-400" />
+            )}
+          </button>
+        </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
-        
-        {products.shirts.slice(0, 4).map((card) => (
-          
-          <Link   key={card.id} to={`/detail/shirts/${card.id}`}>
-          <div
-            className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-            <div className="overflow-hidden">
-              
-      
-              <img
-                src={card.image}
-                alt={card.name}
-                className="w-full aspect-3/4 object-cover transition-transform duration-500 hover:scale-105"
-                />
-            </div>
-            {/*  */}
-            <h1 className="mt-3 font-medium text-base">{card.name}</h1>
-            <p className="mt-1 text-lg font-bold">
-              Rs. {card.price.toLocaleString()}
-            </p>
-            <div className="flex gap-2">
-              {card.sizes.map((size, index) => (
-                <span
+        <Link to={`/detail/shirts/${card.id}`}>
+          <div className="overflow-hidden">
+            <img
+              src={card.image}
+              alt={card.name}
+              className="w-full aspect-3/4 object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+
+          <h1 className="mt-3 font-medium text-base">
+            {card.name}
+          </h1>
+
+          <p className="mt-1 text-lg font-bold">
+            Rs. {card.price.toLocaleString()}
+          </p>
+
+          <div className="flex gap-2">
+            {card.sizes.map((size, index) => (
+              <span
                 key={index}
                 className="mt-3 flex flex-wrap gap-2 text-sm text-gray-600"
-                >
-                  {" "}
-                  {size}
-                </span>
-              ))}
-            </div>
-            {/*  */}
-            <div className="flex gap-2 mt-2 ">
-              {card.colors.map((color, index) => (
-                <span
-                  key={index}
-                  className="h-5 w-5 rounded-full border border-gray-300"
-                  style={{ backgroundColor: color }}
-                ></span>
-              ))}
-            </div>
+              >
+                {size}
+              </span>
+            ))}
           </div>
-          </Link>
-        ))}
+
+          <div className="flex gap-2 mt-2">
+            {card.colors.map((color, index) => (
+              <span
+                key={index}
+                className="h-5 w-5 rounded-full border border-gray-300"
+                style={{ backgroundColor: color }}
+              />
+            ))}
+          </div>
+        </Link>
       </div>
+    )
+  })}
+</div>
       <div className="flex items-center gap-4 my-10">
   <div className="flex-1 border-t border-gray-300"></div>
 
@@ -131,9 +154,7 @@ const All = () => {
   <div className="flex-1 border-t border-gray-300"></div>
 </div>
       {/* show last hadinf */}
-      <div className="">
-
-      </div>
+      <div className=""></div>
     </div>
   );
 };

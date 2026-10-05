@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
+import { cartuse } from '../context/cartcontext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const {state, dispatch} = cartuse()
 
   const closeSidebar = () => {
     setIsOpen(false)
@@ -64,8 +66,9 @@ const Navbar = () => {
 
           <Link
             to="/cart"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
           >
+            <div className="absolute top-1 right-1 bg-amber-600 h-2 w-2 rounded-full"></div>
             <svg
               className="h-5 w-5"
               fill="none"
@@ -75,6 +78,7 @@ const Navbar = () => {
             >
               <circle cx="9" cy="21" r="1" />
               <circle cx="20" cy="21" r="1" />
+              
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -109,6 +113,7 @@ const Navbar = () => {
             className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition hover:bg-gray-100"
           >
             <svg
+            
               className="h-5 w-5"
               fill="none"
               stroke="currentColor"

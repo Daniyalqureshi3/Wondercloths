@@ -7,6 +7,7 @@ import { cartuse } from '../context/cartcontext';
 
 const Cart = () => {
   const {state, dispatch} =cartuse()
+  // const price = item.price * quantity
   return (
     <div>
       <Navbar />
@@ -51,8 +52,11 @@ state.cart.map((item) => (
         </p>
       )}
 
+      <p className="text-xl font-semibold text-gray-900">
+         Quantity: {item.quantity}
+      </p>
       <p className="text-xl font-bold text-gray-900">
-        Rs. {item.price.toLocaleString()}
+        Rs. {(item.price * item.quantity).toLocaleString()}
       </p>
     </div>
 
@@ -96,7 +100,11 @@ state.cart.map((item) => (
 </div>
 
       )}
-      
+      {/* 
+       */}
+       {/*  */}
+       {/* 
+        */}
       <Footer />
     </div>
   )

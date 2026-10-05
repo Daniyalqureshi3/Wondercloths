@@ -33,21 +33,21 @@ const reducer =(state, action) =>{
         cart: state.cart.filter((t)=> t.id !== action.payload)
     };
     case "ADD_FAVORITE":
-        return{
-            ...state,
-           favorite:[
-            ...state.favorite,
-            {
-            
-                id: Date.now(),
-                image: action.payload.image,
-                category: action.payload.category,
-                price: action.payload.price,
-                name: action.payload.name,
-            
-            },
-           ] 
-        };
+  return {
+    ...state,
+    favorite: [
+      ...state.favorite,
+      {
+        id: Date.now(),
+        quantity: action.payload.quantity,
+        productId: action.payload.productId,
+        image: action.payload.image,
+        category: action.payload.category,
+        price: action.payload.price,
+        name: action.payload.name,
+      },
+    ],
+  };
         case "REMOVE_FAVORITE":
         return {
             ...state,

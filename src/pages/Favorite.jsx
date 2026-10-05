@@ -48,7 +48,7 @@ const Favorite = () => {
             </h2>
 
             <p className="mt-3 text-xl font-bold text-gray-900">
-              Rs. {item.price.toLocaleString()}
+              Rs. {item.price}
             </p>
 
             <button

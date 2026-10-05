@@ -2,21 +2,59 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import products from '../data/products'
 import { Link } from 'react-router-dom'
+import { cartuse } from '../context/cartcontext'
+import { MdFavoriteBorder } from "react-icons/md";
+import { MdFavorite } from "react-icons/md";
 
 
 const Watches = () => {
+
+  const {dispatch, state} =cartuse();
+  const favorite =(card)=>{
+    dispatch({
+      type:"ADD_FAVORITE",
+       payload:{
+      productId: card.id,
+       image: card.image,
+       category: "shirts",
+       price: card.price,
+       name: card.name,
+      }
+    })
+  }
   return (
     <div>
       <Navbar />
       {/* produtcs */}
        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
-        {products.watches.map((card) => (
-          <Link   key={card.id} to={`/detail/watches/${card.id}`}>
-
+        {products.watches.map((card) => {
+              const isFavorite = state.favorite.some(
+      (item) =>
+        item.productId === card.id &&
+        item.category === "shirts"
+    )
+          return(
           <div
             key={card.id}
-            className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+            className="relative m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
             >
+                      <div className="absolute top-3 right-3 z-10">
+          <button
+            type="button"
+            onClick={() => favorite(card)}
+            className="text-2xl transition-transform duration-200 hover:scale-110"
+          >
+            {isFavorite ? (
+              <MdFavorite className="text-red-500" />
+            ) : (
+              <MdFavoriteBorder className="text-gray-400" />
+            )}
+          </button>
+        </div>
+
+
+
+          <Link   key={card.id} to={`/detail/watches/${card.id}`}>
             <div className="overflow-hidden">
               <img
                 src={card.image}
@@ -40,9 +78,10 @@ const Watches = () => {
                 ></span>
               ))}
             </div>
-          </div>
         </Link>
-        ))}
+          </div>
+          )
+})}
       </div>
 
       <Footer />

@@ -10,6 +10,7 @@ import { FaOpencart } from "react-icons/fa";
 
 const ProductDetail = () => {
 const {dispatch} = cartuse()
+const [quantity, setquantity] = useState(1)
 
   const [selectedSize, setSelectedSize] = useState('')
   const [selectedColor, setSelectedColor] = useState('')
@@ -21,7 +22,8 @@ const {dispatch} = cartuse()
     dispatch({
       type:"ADD_CART",
       payload:{
-        image: image,
+          quantity:quantity,
+        image: product.image,
         category: product.category,
         price:product.price,
         name:product.name,
@@ -150,6 +152,28 @@ const {dispatch} = cartuse()
             : 'Out of stock'}
         </span>
       </div>
+<div className="flex items-center gap-3">
+  <button
+    type="button"
+    disabled={quantity <= 1}
+    onClick={() => setquantity(prev => prev - 1)}
+    className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-lg font-medium transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
+  >
+    −
+  </button>
+
+  <h3 className="flex h-9 min-w-8 items-center justify-center text-base font-semibold">
+    {quantity}
+  </h3>
+
+  <button
+    type="button"
+    onClick={() => setquantity(prev => prev + 1)}
+    className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-300 text-lg font-medium transition hover:bg-gray-100"
+  >
+    +
+  </button>
+</div>
 
       <div>
         <h2 className="mb-3 text-lg font-semibold text-gray-900">
