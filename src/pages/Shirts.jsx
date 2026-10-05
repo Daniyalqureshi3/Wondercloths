@@ -3,31 +3,53 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import { cartuse } from '../context/cartcontext'
-
+import { MdFavoriteBorder } from "react-icons/md";
+import { MdFavorite } from "react-icons/md";
 
 const Shirts = () => {
-  const {dispatch} = cartuse()
-    const favorite =()=>{
-    dispatch({
-      type:"ADD_FAVORITE",
-      payload:{
-                image: products.image,
-        category: products.category,
-        price:products.price,
-        name:products.name,
-      }
-    })
-  }
+  const {dispatch, state} = cartuse()
+const favorite = (card) => {
+  dispatch({
+    type: "ADD_FAVORITE",
+payload: {
+  productId: card.id,
+  image: card.image,
+  category: "shirts",
+  price: card.price,
+  name: card.name,
+}
+  })
+}
   return (
     <div>
       <Navbar />
       {/* product map */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
-        {products.shirts.map((card) => (
-          <Link key={card.id} to={`/detail/shirts/${card.id}`}>
+      <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
+        {products.shirts.map((card) => {
+    const isFavorite = state.favorite.some(
+      (item) =>
+        item.productId === card.id &&
+        item.category === "shirts"
+    )
+          return(
+
           <div
             className=" m-1 border border-gray-200 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
           >
+                    <div className="absolute top-3 right-3 z-10">
+                      <button
+                        type="button"
+                        onClick={() => favorite(card)}
+                        className="text-2xl transition-transform duration-200 hover:scale-110"
+                      >
+                        {isFavorite ? (
+                          <MdFavorite className="text-red-500" />
+                        ) : (
+                          <MdFavoriteBorder className="text-gray-400" />
+                        )}
+                      </button>
+                    </div>
+          <Link key={card.id} to={`/detail/shirts/${card.id}`}>
             <div className="overflow-hidden">
               <img
                 src={card.image}
@@ -61,9 +83,10 @@ const Shirts = () => {
                 ></span>
               ))}
             </div>
-          </div>
           </Link>
-        ))}
+          </div>
+          )
+})}
       </div>
 
 
