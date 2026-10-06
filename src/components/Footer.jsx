@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
 
       <div>
-        <h1 className="text-2xl font-bold">MENZO</h1>
+        <h1 className="text-2xl font-bold">VEYRON</h1>
         <p className="mt-2 text-sm text-gray-400">
           Modern style for every man.
         </p>
@@ -26,7 +26,7 @@ const Footer = () => {
 
     <div className="mt-8 border-t border-gray-800 pt-5 text-center">
       <p className="text-sm text-gray-500">
-        © 2026 MENZO. All rights reserved.
+        © 2026 VEYRON. All rights reserved.
       </p>
     </div>
   </div>

@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <Link
           to="/"
-          className="absolute left-1/2 -translate-x-1/2 text-xl font-bold tracking-[0.25em] text-gray-900 sm:text-2xl"
+          className="absolute left-1/2 -translate-x-1/2 md:text-xl lg:text-4xl xl:text-4xl font-bold tracking-[0.25em] text-gray-900 sm:text-2xl "
         >
           VEYRON
         </Link>
@@ -68,9 +68,9 @@ const Navbar = () => {
             to="/cart"
             className="relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
           >
-            <div className="absolute top-1 right-1 bg-amber-600 h-2 w-2 rounded-full"></div>
+            <div className="absolute top-1 right-1 bg-amber-600 h-2 w-2 rounded-full sm:h-1 sm:w-1"></div>
             <svg
-              className="h-5 w-5"
+              className="h-5 w-5 "
               fill="none"
               stroke="currentColor"
               strokeWidth="1.8"
