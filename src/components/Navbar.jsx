@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full border-b border-gray-200 bg-white ">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white ">
       <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ">
 
         <div className="w-24">
@@ -45,10 +45,12 @@ const Navbar = () => {
         </Link>
 
         <div className="flex w-24 justify-end gap-2">
+          
           <Link
             to="/favorite"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
           >
+            <div className={`absolute top-1 right-1 h-2 w-2 rounded-full ${state.favorite.length > 0 ? "bg-red-800" : "none"}`}></div>
             <svg
               className="h-5 w-5"
               fill="none"
@@ -68,7 +70,7 @@ const Navbar = () => {
             to="/cart"
             className="relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
           >
-            <div className="absolute top-1 right-1 bg-amber-600 h-2 w-2 rounded-full sm:h-1 sm:w-1"></div>
+            <div className={`absolute top-1 right-1 h-2 w-2 rounded-full ${state.cart.length > 0 ? "bg-red-800" : "none"}`}></div>
             <svg
               className="h-5 w-5 "
               fill="none"
