@@ -24,6 +24,20 @@ payload: {
   return (
     <div>
       <Navbar />
+      <br /> <br />
+      <div className="mt-8 px-4 text-center">
+  <h1 className="font-serif text-4xl font-semibold tracking-[0.15em] text-[#C8A45D] md:text-5xl">
+    PAINTS
+  </h1>
+
+  <h2 className="mt-2 text-lg font-medium tracking-wide text-gray-800 md:text-xl">
+    Bold colors. Endless possibilities.
+  </h2>
+
+  <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-500 md:text-base">
+    Explore our curated collection of quality paints, created to bring lasting color and character to every space.
+  </p>
+</div>
        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.pants.map((card) => {
               const isFavorite = state.favorite.some(

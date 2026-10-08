@@ -23,7 +23,7 @@ payload: {
   })
 }
   return (
-    <div>
+    <div className="bg-[#fdfdfd]">
       {/*  */}
       <div className=" max-w-full mt-3 items-center flex justify-center gap-2 sm:gap-4">
         <div className=" bg-white/95  flex flex-col  ">
@@ -67,9 +67,14 @@ payload: {
           <h1 className="text-center font-medium text-black/90">Watches</h1>
         </div>
       </div>
-      <h1 className="text-center mt-3 font-medium text-4xl font-serif shadow-2xl text-gray-400 hover:text-black">
-        Trending Now
-      </h1>
+<h1 className="mt-3 text-center font-sans text-4xl font-semibold tracking-wide text-[#C8A45D]">
+  Featured Products
+</h1>
+
+<p className="mt-1 text-center text-sm tracking-wider text-gray-500">
+  Best Picks for Your Style
+</p>
+
       {/* show some items  */}
       {/*  */}
       {/*  */}

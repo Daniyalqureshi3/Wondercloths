@@ -25,6 +25,20 @@ const Watches = () => {
   return (
     <div>
       <Navbar />
+      <br /><br />
+      <div className="mt-8 px-4 text-center">
+  <h1 className="font-serif text-4xl font-semibold tracking-[0.15em] text-[#C8A45D] md:text-5xl">
+    WATCHES
+  </h1>
+
+  <h2 className="mt-2 text-lg font-medium tracking-wide text-gray-800 md:text-xl">
+    Timeless pieces. Refined presence.
+  </h2>
+
+  <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-500 md:text-base">
+    Explore our curated collection of watches, designed to complement every look with timeless elegance.
+  </p>
+</div>
       {/* produtcs */}
        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-3 ">
         {products.watches.map((card) => {

@@ -193,9 +193,9 @@ const [quantity, setquantity] = useState(1)
   !selectedColor ||
   product.stock <= 0
 }
-        className="w-full rounded-xl bg-gray-900 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300"
+        className="w-full rounded-xl bg-slate-600 px-6 py-4 text-sm  uppercase tracking-widest text-[#d4c27e] font-bold transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300 flex  justify-center items-center gap-5"
       >
-        <span><FaOpencart /></span>
+        <FaOpencart className='text-3xl font-bold'/>
         Add to Cart
       </button>
 

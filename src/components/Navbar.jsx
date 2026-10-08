@@ -12,8 +12,8 @@ const Navbar = () => {
   }
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white ">
-      <nav className="relative mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ">
+    <header className="fixed top-0 left-0 z-50 w-full border-b border-amber-200 bg-[#C9B08A] ">
+      <nav className="relative mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ">
 
         <div className="w-24">
           <button
@@ -37,12 +37,12 @@ const Navbar = () => {
           </button>
         </div>
 
-        <Link
-          to="/"
-          className="absolute left-1/2 -translate-x-1/2 md:text-xl lg:text-4xl xl:text-4xl font-bold tracking-[0.25em] text-gray-900 sm:text-2xl "
-        >
-          VEYRON
-        </Link>
+<Link
+  to="/"
+  className="absolute left-[44%] -translate-x-1/2 font-bold tracking-[0.25em] text-gray-900 sm:left-[42%] sm:text-2xl md:left-1/2 md:text-xl lg:text-3xl xl:text-3xl"
+>
+  VEYRON
+</Link>
 
         <div className="flex w-24 justify-end gap-2">
           
@@ -50,7 +50,7 @@ const Navbar = () => {
             to="/favorite"
             className="relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
           >
-            <div className={`absolute top-1 right-1 h-2 w-2 rounded-full ${state.favorite.length > 0 ? "bg-red-800" : "none"}`}></div>
+            <div className={`absolute top-1 right-1 h-3 w-3 rounded-full animate-bounce ${state.favorite.length > 0 ? "bg-red-800" : "hidden"}`}></div>
             <svg
               className="h-5 w-5"
               fill="none"
@@ -70,7 +70,7 @@ const Navbar = () => {
             to="/cart"
             className="relative flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-gray-700 transition hover:bg-gray-100"
           >
-            <div className={`absolute top-1 right-1 h-2 w-2 rounded-full ${state.cart.length > 0 ? "bg-red-800" : "none"}`}></div>
+            <div className={`absolute top-1 right-1 h-3 w-3 rounded-full  animate-ping ${state.cart.length > 0 ? "bg-red-800" : "hidden"}`}></div>
             <svg
               className="h-5 w-5 "
               fill="none"
@@ -187,6 +187,7 @@ const Navbar = () => {
           </div>
         </div>
       </aside>
+      
     </header>
   )
 }

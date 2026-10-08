@@ -7,15 +7,16 @@ import { cartuse } from '../context/cartcontext';
 
 const Cart = () => {
   const {state, dispatch} =cartuse()
-  // const price = item.price * quantity
+
   return (
-    <div>
+    <div >
       <Navbar />
+      <br /><br /><br /> <br />
       {state.cart.length > 0 &&(
-state.cart.map((item) => (
+     state.cart.map((item) => (
   <div
     key={item.id}
-    className="group relative flex flex-col gap-5 rounded-2xl border border-gray-200 bg-white p-4 transition-all duration-300 hover:border-gray-300 hover:shadow-lg sm:flex-row sm:items-center sm:p-6"
+    className="group relative flex flex-col gap-5 rounded-2xl border border-gray-200 bg-white p-4 transition-all duration-300 hover:border-gray-300 hover:shadow-lg sm:flex-row sm:items-center sm:p-6 mt-2"
   >
     <div className="h-36 w-full shrink-0 overflow-hidden rounded-xl bg-gray-100 sm:h-40 sm:w-32">
       <img
@@ -93,7 +94,7 @@ state.cart.map((item) => (
 
   <Link
     to="/All"
-    className="mt-8 inline-flex items-center justify-center rounded-full bg-gray-900 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white transition duration-300 hover:bg-gray-700"
+    className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-600 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-[#d2c7a1] transition duration-300 hover:bg-gray-700"
   >
     Explore Collection
   </Link>

@@ -66,11 +66,11 @@ const Carousle = () => {
 
             <div className="absolute inset-0 flex items-center">
               <div className="px-6 sm:px-10 md:px-16">
-                <p className="mb-3 text-sm font-medium uppercase tracking-[4px] text-white/80">
+                <p className="mb-3 text-sm font-medium uppercase tracking-[4px] text-[#C8A45D]">
                   Men's Collection
                 </p>
 
-                <h1 className="max-w-xl text-4xl font-bold text-white sm:text-5xl md:text-6xl">
+                <h1 className="max-w-xl text-4xl font-bold text-[#C8A45D] sm:text-5xl md:text-6xl">
                   {slide.title}
                 </h1>
 
@@ -78,7 +78,7 @@ const Carousle = () => {
                   {slide.text}
                 </p>
 
-                <button className="mt-7 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-gray-200">
+                <button className="mt-7 rounded-full bg-slate-600 px-6 py-3 text-sm font-semibold text-[#d2c7a1] transition hover:bg-gray-200">
                   Shop Now
                 </button>
               </div>

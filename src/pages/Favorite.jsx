@@ -10,6 +10,7 @@ const Favorite = () => {
   return (
     <div>
       <Navbar />
+    
 {/* fav products */}
 {state.favorite.length > 0 && (
   <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
@@ -96,7 +97,7 @@ const Favorite = () => {
 
     <Link
       to="/All"
-      className="mt-8 inline-flex items-center justify-center rounded-full bg-gray-900 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white transition duration-300 hover:bg-gray-700"
+      className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-600 px-8 py-4 text-sm font-semibold uppercase tracking-widest text-[#d2c7a1] transition duration-300 hover:bg-gray-700"
     >
       Explore Collection
     </Link>
