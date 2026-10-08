@@ -7,6 +7,12 @@ import { cartuse } from '../context/cartcontext';
 
 const Cart = () => {
   const {state, dispatch} =cartuse()
+const totalitem = state.cart.reduce(
+  (total, item) => total + item.quantity
+)
+const totalprice = state.cart.re(
+  (total, item) => total + item.quantity * item.price
+)
 
   return (
     <div >
