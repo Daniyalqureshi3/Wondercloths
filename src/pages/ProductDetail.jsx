@@ -6,6 +6,8 @@ import Footer from '../components/Footer'
 import { useState } from 'react'
 import { cartuse } from '../context/cartcontext'
 import { FaOpencart } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ProductDetail = () => {
@@ -31,6 +33,11 @@ const [quantity, setquantity] = useState(1)
         size:selectedSize,
       }
     })
+      toast.success('Your item has been added to your cart!');
+
+  setSelectedColor('');
+  setSelectedSize('');
+  setquantity(1);
   }
 
 
@@ -38,6 +45,12 @@ const [quantity, setquantity] = useState(1)
   return (
     <div>
         <Navbar />
+              <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        theme="dark"
+      />
+
 
         {/* detail ptoduct view product detail */}
         
@@ -192,9 +205,9 @@ const [quantity, setquantity] = useState(1)
   (product.sizes && !selectedSize) ||
   !selectedColor ||
   product.stock <= 0 ||
-  quantity > product.stock
+  quantity >= product.stock
 }
-        className="w-full rounded-xl bg-slate-600 px-6 py-4 text-sm  uppercase tracking-widest text-[#d4c27e] font-bold transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300 flex  justify-center items-center gap-5"
+        className="w-full rounded-xl bg-slate-600 px-6 py-4 text-sm  uppercase tracking-widest text-[#d4c27e] font-bold transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300 flex  justify-center items-center gap-5 disabled:opacity-70"
       >
         <FaOpencart className='text-3xl font-bold'/>
         Add to Cart

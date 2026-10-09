@@ -12,6 +12,8 @@ import Watches from './pages/Watches'
 import Shirts from './pages/Shirts'
 import ProductDetail from './pages/ProductDetail'
 import { CartProvider } from './context/cartcontext'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 const router = createBrowserRouter([
