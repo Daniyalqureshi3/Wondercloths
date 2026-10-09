@@ -8,10 +8,12 @@ import { cartuse } from '../context/cartcontext';
 const Cart = () => {
   const {state, dispatch} =cartuse()
 const totalitem = state.cart.reduce(
-  (total, item) => total + item.quantity
+  (total, item) => total + item.quantity,
+  0
 )
-const totalprice = state.cart.re(
-  (total, item) => total + item.quantity * item.price
+const totalprice = state.cart.reduce(
+  (total, item) => total + item.quantity * item.price,
+  0
 )
 
   return (
@@ -74,9 +76,12 @@ const totalprice = state.cart.re(
     >
       Remove
     </button>
+
   </div>
+  
 ))
       )}
+      <div className="">
       {state.cart.length === 0 && (
         
 
@@ -107,11 +112,34 @@ const totalprice = state.cart.re(
 </div>
 
       )}
-      {/* 
-       */}
-       {/*  */}
-       {/* 
-        */}
+
+<div className="mt-5 flex w-full flex-col gap-5 rounded-2xl bg-[#171717] p-5 shadow-lg sm:p-7">
+  <h1 className="font-sans text-2xl font-bold tracking-wide text-[#C8A45D]">
+    ORDER SUMMARY
+  </h1>
+
+  <hr className="border-gray-700" />
+
+  <div className="flex items-center justify-between gap-4">
+    <h2 className="font-medium text-gray-300">Total Quantity</h2>
+    <h2 className="font-semibold text-white">{totalitem} items</h2>
+  </div>
+
+  <div className="flex items-center justify-between gap-4">
+    <h2 className="font-medium text-gray-300">Total Price</h2>
+    <h2 className="font-bold text-[#C8A45D]">
+      Rs. {totalprice.toLocaleString()}
+    </h2>
+  </div>
+
+  <button
+    className="w-full rounded-xl bg-[#C8A45D] px-8 py-4 font-semibold tracking-wide text-black transition duration-300 hover:bg-[#b8934d] sm:w-auto sm:self-end"
+  >
+    Proceed to Checkout →
+  </button>
+</div>
+
+</div>
       <Footer />
     </div>
   )

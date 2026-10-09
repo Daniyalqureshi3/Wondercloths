@@ -4,7 +4,7 @@ import './navbar.css'
 const Footer = () => {
   return (
     <div>
-      <footer className="mt-10 border-t border-gray-200 bg-[#d4b381]   text-white">
+      <footer className=" border-t border-gray-200 bg-[#d4b381]   text-white">
   <div className="mx-auto max-w-7xl px-5 py-8">
     <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
 
