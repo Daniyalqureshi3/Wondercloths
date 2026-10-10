@@ -113,7 +113,7 @@ const totalprice = state.cart.reduce(
 
       )}
 
-<div className="mt-5 flex w-full flex-col gap-5 rounded-2xl bg-[#171717] p-5 shadow-lg sm:p-7">
+<div className="mt-5 flex w-full flex-col gap-5 rounded-2xl bg-[#171717] p-5  shadow-lg sm:p-7">
   <h1 className="font-sans text-2xl font-bold tracking-wide text-[#C8A45D]">
     ORDER SUMMARY
   </h1>
@@ -132,11 +132,13 @@ const totalprice = state.cart.reduce(
     </h2>
   </div>
 
+
   <button
-    className="w-full rounded-xl bg-[#C8A45D] px-8 py-4 font-semibold tracking-wide text-black transition duration-300 hover:bg-[#b8934d] sm:w-auto sm:self-end"
-  >
+    className="w-full rounded-xl bg-[#C8A45D] px-8 py-4  font-semibold tracking-wide text-black transition duration-300 hover:bg-[#b8934d] sm:w-auto sm:self-end"
+    >
     Proceed to Checkout →
   </button>
+    
 </div>
 
 </div>

@@ -6,8 +6,9 @@ import Footer from '../components/Footer'
 import { useState } from 'react'
 import { cartuse } from '../context/cartcontext'
 import { FaOpencart } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast, Toaster } from 'sonner';
+
+
 
 
 const ProductDetail = () => {
@@ -20,36 +21,46 @@ const [quantity, setquantity] = useState(1)
     const product = products[category].find(
   (item) => item.id === Number(id)
 )
-  const Addtocart =()=>{
-    dispatch({
-      type:"ADD_CART",
-      payload:{
-          quantity:quantity,
-        image: product.image,
-        category: product.category,
-        price:product.price,
-        name:product.name,
-        color:selectedColor,
-        size:selectedSize,
-      }
-    })
-      toast.success('Your item has been added to your cart!');
+// const Addtocart = () => {
+//   toast.promise(
+//     new Promise((resolve) => {
+//       dispatch({
+//         type: "ADD_CART",
+//         payload: {
+//           quantity,
+//           image: product.image,
+//           category: product.category,
+//           price: product.price,
+//           name: product.name,
+//           color: selectedColor,
+//           size: selectedSize,
+//         }
+//       });
 
-  setSelectedColor('');
-  setSelectedSize('');
-  setquantity(1);
-  }
+//       setTimeout(() => resolve(), 2000);
+//     }),
+//     {
+//       loading: 'Adding item to your cart...',
+//       success: 'Your item has been added to your cart!',
+//       error: 'Failed to add item to cart.',
+//     }
+//   );
+
+//   setSelectedColor('');
+//   setSelectedSize('');
+//   setquantity(1);
+// };
 
 
 
   return (
     <div>
         <Navbar />
-              <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        theme="dark"
-      />
+<Toaster
+  position="top-center"
+  duration={3000}
+  theme="dark"
+/>
 
 
         {/* detail ptoduct view product detail */}
@@ -205,7 +216,7 @@ const [quantity, setquantity] = useState(1)
   (product.sizes && !selectedSize) ||
   !selectedColor ||
   product.stock <= 0 ||
-  quantity >= product.stock
+  quantity > product.stock
 }
         className="w-full rounded-xl bg-slate-600 px-6 py-4 text-sm  uppercase tracking-widest text-[#d4c27e] font-bold transition hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300 flex  justify-center items-center gap-5 disabled:opacity-70"
       >
