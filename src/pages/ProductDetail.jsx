@@ -21,35 +21,35 @@ const [quantity, setquantity] = useState(1)
     const product = products[category].find(
   (item) => item.id === Number(id)
 )
-// const Addtocart = () => {
-//   toast.promise(
-//     new Promise((resolve) => {
-//       dispatch({
-//         type: "ADD_CART",
-//         payload: {
-//           quantity,
-//           image: product.image,
-//           category: product.category,
-//           price: product.price,
-//           name: product.name,
-//           color: selectedColor,
-//           size: selectedSize,
-//         }
-//       });
+const Addtocart = () => {
+  toast.promise(
+    new Promise((resolve) => {
+      dispatch({
+        type: "ADD_CART",
+        payload: {
+          quantity,
+          image: product.image,
+          category: product.category,
+          price: product.price,
+          name: product.name,
+          color: selectedColor,
+          size: selectedSize,
+        }
+      });
 
-//       setTimeout(() => resolve(), 2000);
-//     }),
-//     {
-//       loading: 'Adding item to your cart...',
-//       success: 'Your item has been added to your cart!',
-//       error: 'Failed to add item to cart.',
-//     }
-//   );
+      setTimeout(() => resolve(), 2000);
+    }),
+    {
+      loading: 'Adding item to your cart...',
+      success: 'Your item has been added to your cart!',
+      error: 'Failed to add item to cart.',
+    }
+  );
 
-//   setSelectedColor('');
-//   setSelectedSize('');
-//   setquantity(1);
-// };
+  setSelectedColor('');
+  setSelectedSize('');
+  setquantity(1);
+};
 
 
 

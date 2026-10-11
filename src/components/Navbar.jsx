@@ -144,6 +144,13 @@ const Navbar = () => {
             >
               All Products
             </Link>
+            <Link
+              to="/shirts"
+              onClick={closeSidebar}
+              className="block rounded-lg px-3 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-100 hover:text-gray-900"
+            >
+              Shirts
+            </Link>
 
             <Link
               to="/tshirt"
