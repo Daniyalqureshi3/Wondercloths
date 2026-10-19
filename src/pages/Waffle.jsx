@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import products from '../data/products'
 import { Link } from 'react-router-dom'
 
-import { cartuse } from './context/cartcontext'
+import { cartuse } from '../context/cartcontext'
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
 
