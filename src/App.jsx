@@ -11,7 +11,8 @@ import Waffle from './pages/Waffle'
 import Watches from './pages/Watches'
 import Shirts from './pages/Shirts'
 import ProductDetail from './pages/ProductDetail'
-import { CartProvider } from './context/cartcontext';
+import { CartProvider } from './context/cartcontext'
+
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -68,8 +69,9 @@ const router = createBrowserRouter([
 
   return (
     <>
+
     <CartProvider>
-     <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </CartProvider>
      
     </>
