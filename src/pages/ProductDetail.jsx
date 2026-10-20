@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useState } from 'react'
-import { cartuse } from '../context/cartcontext'
+import { cartuse } from '../context/Context'
 import { FaOpencart } from "react-icons/fa";
 import { toast, Toaster } from 'sonner';
 

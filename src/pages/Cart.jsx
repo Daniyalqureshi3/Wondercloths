@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-import { cartuse } from '../context/cartcontext';
+import { cartuse } from '../context/Context';
 
 
 const Cart = () => {

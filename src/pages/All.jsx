@@ -1,9 +1,9 @@
 import products from "../data/products";
 import {Link} from'react-router-dom'
-import { cartuse } from "../context/cartcontext";
+import { cartuse } from "../context/Context";
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
-import { useState } from "react";
+
 
 const All = () => {
   const {dispatch, state} = cartuse()

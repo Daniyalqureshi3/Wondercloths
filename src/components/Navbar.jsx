@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.css'
-import { cartuse } from '../context/cartcontext'
+import { cartuse } from '../context/Context'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)

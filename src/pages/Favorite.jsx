@@ -1,6 +1,6 @@
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import { cartuse } from '../context/cartcontext'
+import { cartuse } from '../context/Context'
 import { MdFavorite } from "react-icons/md";
 import { Link } from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useReducer,  } from "react"; 
 
 
-const Cartcontext = createContext();
+const Context = createContext();
 
 const initailstate ={
     cart: JSON.parse(localStorage.getItem ("cart")) || [],
@@ -69,9 +69,9 @@ useEffect(()=>{
 }, [state.favorite])
 return(
 
-    <Cartcontext.Provider value={{state, dispatch}}>
+    <Context.Provider value={{state, dispatch}}>
         {children}
-    </Cartcontext.Provider>
+    </Context.Provider>
 )
 }
-export const cartuse =()=> useContext (Cartcontext)
+export const cartuse =()=> useContext (Context)
