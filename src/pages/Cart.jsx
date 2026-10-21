@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import { FaCartShopping } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { cartuse } from '../context/Context';
+import { toast, Toaster } from 'sonner';
 
 
 const Cart = () => {
@@ -19,6 +20,7 @@ const totalprice = state.cart.reduce(
   return (
     <div >
       <Navbar />
+      <Toaster position="top-center" duration={3000} theme="dark" />
       <br /><br /><br /> <br />
       {state.cart.length > 0 &&(
      state.cart.map((item) => (
@@ -133,11 +135,14 @@ const totalprice = state.cart.reduce(
   </div>
 
 
-  <button
-    className="w-full rounded-xl bg-[#C8A45D] px-8 py-4  font-semibold tracking-wide text-black transition duration-300 hover:bg-[#b8934d] sm:w-auto sm:self-end"
-    >
-    Proceed to Checkout →
-  </button>
+<button
+  onClick={() => toast.info(
+    "This is a frontend-only demo project. Checkout is unavailable because the backend has not been implemented yet."
+  )}
+  className="w-full rounded-xl bg-[#C8A45D] px-8 py-4 font-semibold tracking-wide text-black transition duration-300 hover:bg-[#b8934d] sm:w-auto sm:self-end"
+>
+  Proceed to Checkout →
+</button>
     
 </div>
 
